@@ -13,7 +13,7 @@ terraform {
     organization = "testbed"
 
     workspaces {
-      name = "hashicat-azure-sentinel"
+      name = "hashicat-azure-opa"
     }
   }
 }
@@ -37,22 +37,22 @@ resource "azurerm_resource_group" "rg-hashicat-azure-opa" {
 
 resource "azurerm_virtual_network" "vnet" {
   name                = "${var.prefix}-vnet"
-  location            = azurerm_resource_group.myresourcegroup.location
+  location            = azurerm_resource_group.rg-hashicat-azure-opa.location
   address_space       = [var.address_space]
-  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  resource_group_name = azurerm_resource_group.rg-hashicat-azure-opa.name
 }
 
 resource "azurerm_subnet" "subnet" {
   name                 = "${var.prefix}-subnet"
   virtual_network_name = azurerm_virtual_network.vnet.name
-  resource_group_name  = azurerm_resource_group.myresourcegroup.name
+  resource_group_name  = azurerm_resource_group.rg-hashicat-azure-opa.name
   address_prefixes     = [var.subnet_prefix]
 }
 
 resource "azurerm_network_security_group" "catapp-sg" {
   name                = "${var.prefix}-sg"
   location            = var.location
-  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  resource_group_name = azurerm_resource_group.rg-hashicat-azure-opa.name
 
   security_rule {
     name                       = "HTTP"
@@ -93,8 +93,8 @@ resource "azurerm_network_security_group" "catapp-sg" {
 
 resource "azurerm_network_interface" "catapp-nic" {
   name                = "${var.prefix}-catapp-nic"
-  location            = azurerm_resource_group.myresourcegroup.location
-  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  location            = azurerm_resource_group.rg-hashicat-azure-opa.location
+  resource_group_name = azurerm_resource_group.rg-hashicat-azure-opa.name
 
   ip_configuration {
     name                          = "${var.prefix}ipconfig"
@@ -111,16 +111,16 @@ resource "azurerm_network_interface_security_group_association" "catapp-nic-sg-a
 
 resource "azurerm_public_ip" "catapp-pip" {
   name                = "${var.prefix}-ip"
-  location            = azurerm_resource_group.myresourcegroup.location
-  resource_group_name = azurerm_resource_group.myresourcegroup.name
+  location            = azurerm_resource_group.rg-hashicat-azure-opa.location
+  resource_group_name = azurerm_resource_group.rg-hashicat-azure-opa.name
   allocation_method   = "Dynamic"
   domain_name_label   = "${var.prefix}-meow"
 }
 
 resource "azurerm_linux_virtual_machine" "catapp" {
   name                            = "${var.prefix}-meow"
-  location                        = azurerm_resource_group.myresourcegroup.location
-  resource_group_name             = azurerm_resource_group.myresourcegroup.name
+  location                        = azurerm_resource_group.rg-hashicat-azure-opa.location
+  resource_group_name             = azurerm_resource_group.rg-hashicat-azure-opa.name
   size                            = var.vm_size
   admin_username                  = var.admin_username
   admin_password                  = var.admin_password
