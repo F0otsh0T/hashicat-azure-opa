@@ -4,8 +4,8 @@
 package terraform
 #package terraform.policies.instance_type
 
-import input.tfplan as tfplan
-#import input.plan as tfplan
+#import input.tfplan as tfplan
+import input.plan as tfplan
 #import input.plan as plan
 
 # Allowed sizes by provider
@@ -16,9 +16,14 @@ allowed_types = {
 }
 
 # Attribute name for instance type/size by provider
+# instance_type_key = {
+#     "aws": "instance_type",
+#     "azurerm": "vm_size",
+#     "google": "machine_type"
+# }
 instance_type_key = {
     "aws": "instance_type",
-    "azurerm": "vm_size",
+    "azurerm": "size",
     "google": "machine_type"
 }
 
