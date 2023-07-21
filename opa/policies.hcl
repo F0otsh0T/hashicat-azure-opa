@@ -18,3 +18,8 @@ policy "friday_deploys" {
   query             = "data.terraform"
   enforcement_level = "mandatory"
 } */
+
+policy "instance_types" {
+  query             = "data.terraform.allowed_types.azurerm"
+  enforcement_level = "mandatory"
+}
