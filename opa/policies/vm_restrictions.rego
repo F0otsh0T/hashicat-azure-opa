@@ -16,6 +16,6 @@ allowedVMTypes = {
 default allow = false
 
 allow {
-    input.virtualMachine["azure:vm:size"] == vmType
-    vmType == allowedVMTypes[_]
+    input.virtualMachine["azure:vm:size"] == vm_size
+    vm_size == allowedVMTypes[_]
 }
