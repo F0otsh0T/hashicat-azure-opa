@@ -4,8 +4,8 @@
 package terraform
 #package terraform.policies.instance_type
 
-#import input.tfplan as tfplan
-import input.plan as plan
+import input.tfplan as tfplan
+#import input.plan as plan
 
 # Allowed sizes by provider
 allowed_types = {
