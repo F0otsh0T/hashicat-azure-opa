@@ -19,20 +19,20 @@
   enforcement_level = "advisory"
 } */
 
-policy "instance_types" {
+/* policy "instance_types" {
   query             = "data.terraform"
   enforcement_level = "mandatory"
-}
+} */
 
 /* policy "instance_types" {
   query             = "data.terraform.allowed_types.azurerm"
   enforcement_level = "mandatory"
 } */
 
-/* policy "instance_types" {
+policy "instance_types" {
   query             = "data.terraform.allowed_types.azurerm"
   enforcement_level = "advisory"
-} */
+}
 
 /* policy "instance_types" {
   query             = "data.terraform.deny"
