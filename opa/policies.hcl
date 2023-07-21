@@ -3,10 +3,10 @@
   enforcement_level = "mandatory"
 } */
 
-policy "vm_restrictions" {
+/* policy "vm_restrictions" {
   query = "data.azure.vm_restrictions"
   enforcement_level = "mandatory"
-}
+} */
 
 /* policy "instance_types" {
   query             = "data.terraform.policies.instance_types.deny"
@@ -33,3 +33,8 @@ policy "vm_restrictions" {
   query             = "data.terraform.allowed_types.azurerm"
   enforcement_level = "advisory"
 } */
+
+policy "instance_types" {
+  query             = "data.terraform.deny"
+  enforcement_level = "advisory"
+}
