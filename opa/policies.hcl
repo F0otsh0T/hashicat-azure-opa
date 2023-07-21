@@ -1,5 +1,10 @@
-policy "friday_deploys" {
+/* policy "friday_deploys" {
   query = "data.terraform.policies.friday_deploys.deny"
+  enforcement_level = "mandatory"
+} */
+
+policy "vm_restrictions" {
+  query = "data.azure.vm_restrictions"
   enforcement_level = "mandatory"
 }
 
