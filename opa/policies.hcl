@@ -1,7 +1,7 @@
-policy "friday_deploys" {
+/* policy "friday_deploys" {
   query = "data.terraform.policies.friday_deploys.deny"
   enforcement_level = "mandatory"
-}
+} */
 
 /* policy "instance_types" {
   query             = "data.terraform.policies.instance_types.deny"
@@ -14,7 +14,7 @@ policy "friday_deploys" {
   enforcement_level = "advisory"
 } */
 
-/* policy "instance_types" {
-  query             = "data.terraform.policies.instance_types.deny"
+policy "instance_types" {
+  query             = "data.terraform"
   enforcement_level = "mandatory"
-} */
+}

@@ -1,8 +1,8 @@
 # Multi proivder rule to enforce instnace type/size
 # Source: https://github.com/Scalr/sample-tf-opa-policies/blob/master/management/instance_types.rego
 
-#package terraform
-package terraform.policies.instance_type
+package terraform
+#package terraform.policies.instance_type
 
 import input.tfplan as tfplan
 
