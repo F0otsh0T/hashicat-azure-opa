@@ -1,3 +1,12 @@
 [submodule "hashicat-azure"]
 	path = hashicat-azure
 	url = https://github.com/hashicorp/hashicat-azure.git
+[submodule "learn-terraform-drift-and-opa"]
+	path = learn-terraform-drift-and-opa
+	url = https://github.com/hashicorp-education/learn-terraform-drift-and-opa.git
+[submodule "tf-compliance-opa-demo"]
+	path = tf-compliance-opa-demo
+	url = https://github.com/hashicorp/tf-compliance-opa-demo.git
+[submodule "sample-tf-opa-policies"]
+	path = sample-tf-opa-policies
+	url = https://github.com/Scalr/sample-tf-opa-policies.git
