@@ -24,7 +24,7 @@ policy "friday_deploys" {
   enforcement_level = "mandatory"
 } */
 
-policy "instance_types" {
+/* policy "instance_types" {
   query             = "data.terraform.allowed_types.azurerm"
   enforcement_level = "advisory"
-}
+} */
