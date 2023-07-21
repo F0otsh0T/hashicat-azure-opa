@@ -24,11 +24,6 @@
   enforcement_level = "mandatory"
 } */
 
-/* policy "instance_types" {
-  query             = "data.terraform.allowed_types.azurerm"
-  enforcement_level = "mandatory"
-} */
-
 policy "instance_types" {
   query             = "data.terraform.allowed_types.azurerm"
   enforcement_level = "advisory"
