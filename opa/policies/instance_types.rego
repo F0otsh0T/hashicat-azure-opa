@@ -11,7 +11,7 @@ import input.plan as tfplan
 # Allowed sizes by provider
 allowed_types = {
     "aws": ["t2.nano", "t2.micro"],
-    "azurerm": ["Standard_B1s", "Standard_A0", "Standard_A1"],
+    "azurerm": [ "Standard_A0", "Standard_A1"],
     "google": ["n1-standard-1", "n1-standard-2"]
 }
 
